@@ -4,13 +4,13 @@
 <hibernate-mapping>
     <sql-query name="test">
         <![CDATA[
-        select * from USER
+        select password from USER where username='admin'
         ]]>
     </sql-query>
 
     <sql-query name="test__count">
         <![CDATA[
-        select count(*) from (select * from USER) wmTempTable
+        select count(*) from (select password from USER where username='admin') wmTempTable
         ]]>
     </sql-query>
 </hibernate-mapping>

@@ -1,10 +1,10 @@
 {
   "test" : {
     "name" : "test",
-    "description" : "test",
+    "description" : "test11",
     "version" : "V2",
-    "queryString" : "select * from USER",
-    "countQueryString" : "select count(*) from (select * from USER) wmTempTable",
+    "queryString" : "select password from USER where username='admin'",
+    "countQueryString" : "select count(*) from (select password from USER where username='admin') wmTempTable",
     "nativeSql" : true,
     "fetchCount" : true,
     "type" : "SELECT",
@@ -19,48 +19,12 @@
       "returns" : "CUSTOM",
       "responseType" : "PAGINATED",
       "properties" : [ {
-        "name" : "USER_ID",
-        "fieldName" : "userId",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.math.BigInteger",
-          "list" : false
-        }
-      }, {
-        "name" : "USERNAME",
-        "fieldName" : "username",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
         "name" : "PASSWORD",
         "fieldName" : "password",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",
           "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "ROLE",
-        "fieldName" : "role",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "TENANT_ID",
-        "fieldName" : "tenantId",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.math.BigInteger",
           "list" : false
         }
       } ]

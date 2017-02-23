@@ -38,7 +38,7 @@ public class QueryExecutionController {
 
     @RequestMapping(value = "/queries/test", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "test")
+    @ApiOperation(value = "test11")
     public Page<TestResponse> executeTest(Pageable pageable) {
         LOGGER.debug("Executing named query: test");
         Page<TestResponse> _result = queryService.executeTest(pageable);

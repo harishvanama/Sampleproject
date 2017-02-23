@@ -129,6 +129,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "/{id:.+}/employeesForManagerId", method = RequestMethod.GET)
     @ApiOperation(value = "Gets the employeesForManagerId instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Employee> findAssociatedEmployeesForManagerId(@PathVariable("id") Integer id, Pageable pageable) {
         LOGGER.debug("Fetching all associated employeesForManagerId");
         return employeeService.findAssociatedEmployeesForManagerId(id, pageable);
@@ -136,6 +137,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "/{id:.+}/vacations", method = RequestMethod.GET)
     @ApiOperation(value = "Gets the vacations instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Vacation> findAssociatedVacations(@PathVariable("id") Integer id, Pageable pageable) {
         LOGGER.debug("Fetching all associated vacations");
         return employeeService.findAssociatedVacations(id, pageable);
